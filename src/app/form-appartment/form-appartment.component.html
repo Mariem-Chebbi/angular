@@ -1,76 +1,86 @@
 <p>form-appartment works!</p>
 <div class="container">
-    <form [formGroup]="appartform">
+  <form [formGroup]="appartform">
 
-        <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Num Appart</span>
-            </div>
-            <input type="text" aria-label="Num Appart" name="numAppart" id="numAppart" class="form-control" formControlName="numAppart">
-           
-          </div>
-          <br>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">Num Etage</span>
-            </div>
-            <input type="text" aria-label="First name" class="form-control" formControlName="numEtage">
-           
-          </div>
-          <br>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">surface</span>
-            </div>
-            <input type="text" aria-label="surface" class="form-control" formControlName="surface">
-          
-          </div>
-          <br>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">terrasse</span>
-            </div>
-            <input type="text" aria-label="terrasse" class="form-control" formControlName="terrasse">
-           
-          </div>
-          <br>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">surfaceTerrasse</span>
-            </div>
-            <input type="text" aria-label="surfaceTerrasse" class="form-control" formControlName="surfaceTerrasse">
-           
-          </div>
-          <br>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">category</span>
-            </div>
-            <input type="text" aria-label="category" class="form-control" formControlName="category">
-           
-          </div>
-          <br>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">description</span>
-            </div>
-            <input type="text" aria-label="description" class="form-control" formControlName="description">
-          
-          </div>
-          <br>
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">residence</span>
-            </div>
-            <input type="text" aria-label="residence" class="form-control" formControlName="residence">
-            
-          </div>
-          
-<br>
-<br>
-          <input type="submit" aria-label="add"  class="bg-primary" value="add" (click)="add()">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Num Appart</span>
+      </div>
+      <input type="text" aria-label="Num Appart" name="numAppart" id="numAppart" class="form-control"
+        formControlName="numAppart">
+      <div *ngIf="numappart!.touched && numappart!.invalid" class="alert alert-danger">
+        num Appartement is required
+      </div>
 
-    </form>
+    </div>
+    <br>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Num Etage</span>
+      </div>
+      <input type="text" aria-label="First name" class="form-control" formControlName="numEtage">
+
+    </div>
+    <br>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">surface</span>
+      </div>
+      <input type="text" aria-label="surface" class="form-control" formControlName="surface">
+
+    </div>
+    <br>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">terrasse</span>
+      </div>
+      <input type="text" aria-label="terrasse" class="form-control" formControlName="terrasse">
+
+    </div>
+    <br>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">surfaceTerrasse</span>
+      </div>
+      <input type="text" aria-label="surfaceTerrasse" class="form-control" formControlName="surfaceTerrasse">
+
+    </div>
+    <br>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">category</span>
+      </div>
+      <input type="text" aria-label="category" class="form-control" formControlName="category">
+
+    </div>
+    <br>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">description</span>
+      </div>
+      <input type="text" aria-label="description" class="form-control" formControlName="description">
+      <div *ngIf="description!.touched && description!.invalid" class="alert alert-danger">
+        description is not valid
+        <div *ngIf="description?.errors?.['minlength']">
+          min Length 10
+        </div>
+      </div>
+
+    </div>
+    <br>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">residence</span>
+      </div>
+      <input type="text" aria-label="residence" class="form-control" formControlName="residence">
+
+    </div>
+
+    <br>
+    <br>
+    <input type="submit" aria-label="add" class="bg-primary" value="add" (click)="add()">
+
+  </form>
 
 
 </div>

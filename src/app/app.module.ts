@@ -16,6 +16,12 @@ import { ListAnnanceComponent } from './annance/list-annance/list-annance.compon
 import { AnnanceRoutingModule } from './annance/annance-routing.module';
 import { AnnanceModule } from './annance/annance.module';
 import { FormAppartmentComponent } from './form-appartment/form-appartment.component';
+import { ListAppartmentComponent } from './shared/list-appartment/list-appartment.component';
+import { AddAppartmentComponent } from './shared/add-appartment/add-appartment.component';
+import { AppartmentComponent } from './appartment/appartment.component';
+import { UpdateAppartmentComponent } from './update-appartment/update-appartment.component';
+import { ErrorsComponent } from './shared/errors/errors.component';
+//import { TestComponent } from './test.component';
 
 
 @NgModule({
@@ -28,14 +34,20 @@ import { FormAppartmentComponent } from './form-appartment/form-appartment.compo
     PageNotFoundComponent,
     ShowappartmentComponent,
     FormAppartmentComponent,
-    
+    ListAppartmentComponent,
+    AddAppartmentComponent,
+    AppartmentComponent,
+    UpdateAppartmentComponent,
+    ErrorsComponent,
+
+
   ],
   imports: [
     BrowserModule,
-    FormsModule, 
-    AppRoutingModule, 
-     AnnanceModule,
-     ReactiveFormsModule
+    FormsModule,
+    AppRoutingModule,
+    AnnanceModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

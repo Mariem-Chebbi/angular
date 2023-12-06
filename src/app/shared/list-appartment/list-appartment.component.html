@@ -1,0 +1,9 @@
+<button class="btn btn-primary" (click)="displayForm()">Display</button>
+<app-add-appartment (addForm)="addappart($event)" *ngIf="aff"></app-add-appartment>
+<app-update-appartment *ngIf="selectedApartment" [app]="selectedApartment"
+    (updateForm)="updateApp($event)"></app-update-appartment>
+
+<div class="row">
+    <app-appartment class="col-4" *ngFor="let r of appartementsList" [app]="r" (deleteEvent)="deleteApp($event)"
+        (updateEvent)="updateApp($event)"></app-appartment>
+</div>
